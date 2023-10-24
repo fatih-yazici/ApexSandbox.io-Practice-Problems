@@ -1,0 +1,44 @@
+public void enrollStudents(List<String> emails, String className) {
+    // code here//bu hocanın kodu çalışıyor aslında
+    apxio__Class__c  Cl=[SELECT Id FROM apxio__Class__c 
+                            where Name=:className LIMIT 1];
+​
+    if(cl!=null){
+        List<apxio__Student__c>  st=[SELECT Id FROM apxio__Student__c
+                WHERE  apxio__Email__c IN :emails];
+​
+    list<apxio__Class_Enrollment__c> enempty=new list<apxio__Class_Enrollment__c> ();
+    for(apxio__Student__c b:st){
+        apxio__Class_Enrollment__c  en=new apxio__Class_Enrollment__c();
+        en.apxio__Student__c=b.id;
+        en.apxio__Offered_Class__c=Cl.id;
+        enempty.add(en);
+​
+    }//for end
+insert enempty;
+ }else{
+        system.debug('sınıf mevcut değil');
+    }
+        /*List<apxio__Class_Enrollment__c> enrollments = new List<apxio__Class_Enrollment__c>();
+    List<apxio__Student__c> students = [SELECT Id, apxio__Email__c 
+                                          FROM apxio__Student__c
+                                         WHERE apxio__Email__c IN: emails ];
+    List<apxio__Class__c> cls = [SELECT Id, Name 
+                                   FROM apxio__Class__c
+                                  WHERE Name =: className];
+
+    for(Integer i=0; i<students.size(); i++){
+        apxio__Class_Enrollment__c enrollment = new apxio__Class_Enrollment__c();
+
+        enrollment.apxio__Student__c = students[i].Id;
+        enrollment.apxio__Offered_Class__c = cls[0].Id;
+
+        enrollments.add(enrollment);
+    }
+
+    if(!enrollments.isEmpty()){
+        insert enrollments;
+    }
+    */
+
+}
