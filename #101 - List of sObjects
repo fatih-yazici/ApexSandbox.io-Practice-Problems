@@ -1,0 +1,47 @@
+public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
+{
+    // code here
+    /*
+    List<sObject> sObjects = new List<sObject>();
+    // Add the accounts to the list of sObjects
+    if (accounts != null && !accounts.isEmpty()) {
+        sObjects.addAll(accounts);
+    }
+    // Add the contacts to the list of sObjects
+    if (contacts != null && !contacts.isEmpty()) {
+        sObjects.addAll(contacts);
+    }
+    return sObjects; 
+}*/
+    
+    List<sObject> so = New List<sObject>();
+    if(accounts != NULL){
+        so.addAll(accounts);
+    }
+    if(contacts != NULL){
+        so.addAll(contacts);
+}
+return so;
+}
+
+
+
+/* bu çalışmıyor:
+    List<sObject> myList = New List<sObject>();
+
+    if(accounts==NULL && contacts==NULL ){
+        return myList;
+
+    }else{
+
+        for(Account a:accounts){
+            myList.add(a);
+
+        }
+        for(Contact c:contacts){
+            myList.add(c);
+
+        }
+        return myList;
+       
+    } */
