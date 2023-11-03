@@ -1,0 +1,24 @@
+public List<Account> getAccountsFromJSONString(String inputJSON){
+    // code here
+    if(inputJSON !=NULL){
+          List<Account> Result = (List<Account>)JSON.deserialize(inputJSON, List<Account>.class);
+    return Result;
+    
+    }
+      return NULL;
+    
+/*
+if (inputJSON == null) return null;
+    List<Account> accs = new List<Account>();
+    List<Object> accWrapper = (List<Object>) JSON.deserializeUntyped(inputJSON);
+    for (Object obj : accWrapper) {
+        Map<String,Object> data = (Map<String,Object>)obj;
+        Account acc = new Account();
+        acc.Id = (Id)data.get('Id');
+        acc.Name = (String)data.get('Name');
+        accs.add(acc);
+    }
+    return accs;
+}
+*/
+}
