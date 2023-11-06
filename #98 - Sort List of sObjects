@@ -1,0 +1,21 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    // code here
+    Account gecici;
+    if(accounts==null){
+        return null;
+    }else{
+        for(Integer i=0;i<accounts.size();i++){
+            for(Integer j=i+1;j<accounts.size();j++){
+                if(accounts.get(j).AnnualRevenue>accounts.get(i).AnnualRevenue)
+                {
+                    gecici=accounts.get(i);
+                    accounts[i]=accounts.get(j);
+                    accounts[j]=gecici;
+                }
+            }
+        }
+        return accounts;
+    }
+
+}
+// write extra class here 
