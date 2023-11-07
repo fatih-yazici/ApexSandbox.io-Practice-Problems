@@ -1,0 +1,22 @@
+public Boolean duplicateContacts(Contact c1, Contact c2) {
+    //code here
+    if(c1.Email==NULL||c1.Phone==NULL||c2.Email==NULL||c2.Phone==NULL){
+
+        return false;
+            
+    }else{
+        if((c1.Email == c2.Email)||(c1.Phone == c2.Phone)){
+                return true;
+
+            } return false;
+    }
+
+    
+}
+
+
+
+/*
+return (c1.Email != null && c1.Email == c2.Email) || (c1.Phone != null && c1.Phone == c2.Phone);
+}
+*/
