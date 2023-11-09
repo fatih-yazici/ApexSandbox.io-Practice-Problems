@@ -1,0 +1,28 @@
+public Boolean isBirthday(Contact c) {
+
+    //code here
+    Integer cM = c.Birthdate.Month();//cM c Month
+    Integer cD = c.Birthdate.Day(); //cD c Day
+
+    Date t = system.today();
+    Integer tM = t.Month(); // tM tMonth
+    Integer tD = t.Day(); // tD t Day
+
+    If(cM==tM && cD==tD){
+        return true;
+    }else{
+        return false;
+    }
+
+
+}
+/*
+  Date mytoday = Date.today();
+    Date bdate = c.Birthdate;
+    If((mytoday.day()==bdate.day() && mytoday.month()==bdate.month()) || mytoday.year()<=bdate.year() ){
+        return true;
+    }else{
+        return false;
+    }
+
+*/
