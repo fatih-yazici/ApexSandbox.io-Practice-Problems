@@ -4,3 +4,4 @@ public Boolean isTypeAccount(sObject record)
     Boolean result = record instanceof Account;
     return result;
 }
+
