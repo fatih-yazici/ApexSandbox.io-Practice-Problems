@@ -1,0 +1,11 @@
+public List<Integer> positiveIntegers(List<Integer> numbers) {
+    //code here
+    List<Integer> positives = New List<Integer>();
+    for(Integer num:numbers){
+        if(num>0){
+            positives.add(num);
+        }
+    }//for döngüsü bitiş
+    return positives;
+
+}
