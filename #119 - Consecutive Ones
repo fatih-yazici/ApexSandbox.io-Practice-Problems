@@ -1,0 +1,17 @@
+public Integer maxConsecutiveOnes(Integer[] numbers) {
+    //code here
+    Integer maxone=0;
+    Integer counter=0;
+    for(Integer num:numbers){
+        if(num==1){
+            counter++;
+        }else{
+            counter=0;
+        }
+        if(counter>maxone){
+            maxone=counter;
+        }
+    }//for bitişi
+    return maxone;
+
+}
