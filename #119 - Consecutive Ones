@@ -14,4 +14,4 @@ public Integer maxConsecutiveOnes(Integer[] numbers) {
     }//for bitişi
     return maxone;
 
-}
+} 
