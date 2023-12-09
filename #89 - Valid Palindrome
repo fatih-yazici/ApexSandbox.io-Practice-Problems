@@ -1,0 +1,63 @@
+public Boolean isPalindrome(String str){
+//code here
+
+    // Convert the string to lowercase
+    String lowerStr = str.toLowerCase();
+    
+    // Remove all characters that are not numbers or letters
+    String alphaLowerStr = lowerStr.replaceAll('[^a-z0-9]', '');
+
+    // Convert the string to an array of characters
+    List<String> stringCharacters = new List<String>();
+    for(Integer i = 0; i < alphaLowerStr.length(); i++) {
+        stringCharacters.add(String.valueOf(alphaLowerStr.charAt(i)));
+    }
+
+    // Check for palindrome
+    Integer i = 0;
+    Integer k = stringCharacters.size() - 1;
+
+    while (i < k) {
+        // Compare characters from the beginning and end
+        if (!stringCharacters[i].equals(stringCharacters[k])) {
+            return false; // If characters don't match, it's not a palindrome
+        }
+
+        i++;
+        k--;
+    }
+
+    return true; // If the loop completes, it's a palindrome
+
+
+   
+}
+
+
+//Yada ikinci çözüm yolu:
+/*
+ str=str.toLowerCase();
+    String alpha = 'abcdefghijklmnopqrstuvwxyz';
+    String num = '0123456789';
+    String result='';
+
+    for(Integer i=0;i<str.length();i++){
+        if(alpha.contains(str.substring(i,i+1))||num.contains(str.substring(i,i+1))){
+        result=result+str.substring(i,i+1);
+
+        }
+    }
+    Integer l=0;
+    Integer r=result.length()-1;
+    while(l<=r){
+        if(result.substring(l,l+1)!=result.substring(r,r+1)){//baş tafataki karakterler,son taraftakilere eşit mi
+            return false;
+
+        }else{
+            l++;
+            r--;
+        }
+    }//while loop sonu
+    return true;
+
+*/
