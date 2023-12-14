@@ -1,0 +1,11 @@
+public List<String> orgNames(List<String> adjectives, List<String> animals) {
+    //code here
+    List<String> orgName = new List<String>();
+    for(String adj:adjectives){
+        for(String anm:animals){
+            String n = adj+'-'+anm;
+            orgName.add(n);
+        }
+    }//for bitişi
+    return orgName;
+}
