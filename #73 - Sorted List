@@ -1,0 +1,34 @@
+public boolean isSorted(List<Integer> numbers) {
+    //code here
+      if (numbers.size() <= 2) {
+            return true;
+        }
+       Boolean artan = null;
+        
+        for (Integer i = 1; i < numbers.size(); i++) {
+            Integer current = numbers.get(i - 1);
+            Integer next = numbers.get(i);
+            
+            if (artan == null) {
+               
+                if (current < next) {
+                    artan = true; 
+                } else if (current > next) {
+                    artan = false; 
+                }
+            } else if (artan) { //artan==true ise
+                
+                if (current > next) {
+                    return false;
+                }
+            } else {
+               
+                if (current < next) {
+                    return false;
+                }
+            }
+        }
+        
+       
+        return true;
+}
