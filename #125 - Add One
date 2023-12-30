@@ -1,0 +1,26 @@
+public static void plusOne(List<Integer> numbers) {
+        Integer n = numbers.size();
+
+        // Start from the rightmost digit
+        for (Integer i = n - 1; i >= 0; i--) {
+            Integer digit = numbers.get(i);
+            
+            // Add 1 to the current digit
+            digit++;
+
+            // Check for carry
+            if (digit < 10) {
+                numbers.set(i, digit);
+                return; // No carry, we're done
+            } else {
+                // Carry, set the current digit to 0 and continue with the next digit
+                numbers.set(i, 0);
+                
+            }
+        }
+
+        // If we reach here, it means there is a carry in the leftmost digit
+        numbers.add(0, 1);
+       
+        
+    }
