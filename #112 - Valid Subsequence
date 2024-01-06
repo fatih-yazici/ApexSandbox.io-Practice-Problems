@@ -1,0 +1,26 @@
+public class Subsequence {
+    public static Boolean isSubSequence(String s1, String s2) {
+        if ((s1 == null || s2 == null)&&(s1.length()>s2.length()))  {
+            return false; 
+        }
+        Boolean s1Lowerletters = s1.containsOnly('abcdefghijklmnoprstuwxyz');
+        Boolean s2Lowerletters = s2.containsOnly('abcdefghijklmnoprstuwxyz');
+        
+        if (s1Lowerletters && s2Lowerletters) {
+            Integer s1Pointer = 0;
+            Integer s2Pointer = 0;
+
+            while (s1Pointer < s1.length() && s2Pointer < s2.length()) {
+                if (s1.charAt(s1Pointer) == s2.charAt(s2Pointer)) {
+                    s1Pointer++; 
+                }
+                s2Pointer++; 
+            }
+
+            return s1Pointer == s1.length(); // s1 deki tüm karakterler s2 deki ile yanı sırada mı
+        } else {
+            return false; // karakterler lower case içermiyorsa
+        }
+    }
+    
+}
