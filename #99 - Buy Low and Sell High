@@ -1,0 +1,23 @@
+List<Integer> prices = new List<Integer>{5,4,3,200,1};
+
+public Integer maxProfit(List<Integer> prices){
+    if (prices == null || prices.size() < 2) {
+        return 0; // Cannot make a profit with less than two prices
+    }    
+    Integer lowest = prices[0];
+    Integer maxProfit = 0;
+    
+    for(Integer i = 1; i < prices.size(); i++) {
+        if (prices[i] < lowest) {
+            lowest = prices[i];
+        } else {
+            Integer currentProfit = prices[i] - lowest;
+            if (currentProfit > maxProfit) {
+                maxProfit = currentProfit;
+            }
+        }
+    }    
+    return maxProfit;
+}
+Integer result = maxProfit(prices);
+System.debug('Max Profit: ' + result);
