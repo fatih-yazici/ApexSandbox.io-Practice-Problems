@@ -1,0 +1,19 @@
+public static List<Integer> squareList(List<Integer> nums){
+    //solution here
+    List<Integer> r= New List<Integer>();
+    if(nums.size()==0){
+        return null;
+    }else{
+        for(Integer n:nums){
+            Integer sonuc=n*n;
+            r.add(sonuc);
+            // ya da r.add(n*n);
+
+        }//for bitişi
+        r.sort();
+        return r;
+    }
+
+
+   
+}
