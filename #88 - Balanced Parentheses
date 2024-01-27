@@ -1,0 +1,24 @@
+public Boolean isValid(String s){
+    //code here //önce bi stack oluştur
+    List<String> stack= New List<String>();//mystack
+    for(Integer i=0;i<s.length();i++){
+        String c = s.substring(i,i+1);//substring metodu kullanımı
+        if(c=='('|| c=='{' || c=='['){
+            stack.add(c);
+        }else if(c==')' || c=='}' || c==']'){
+            if(stack.isEmpty()){
+                return false;
+            }//if bitişi
+            String top=stack.remove(stack.size()-1);
+            if(!(c==')' && top=='(') && !(c=='}' && top=='{') && !(c==']' && top=='[')){
+                return false;
+
+            }
+        }
+
+    }//for bitişi
+
+    return stack.isEmpty();
+
+
+}
